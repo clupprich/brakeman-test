@@ -1,0 +1,789 @@
+- page_title('Parts Kit')
+
+
+%section.pk-section.grid.mt30
+
+  %header.grid__item.one-whole
+    %h2.pk-heading Color Variables
+
+  .grid__item.one-quarter
+    .pk-intro
+      %p Several SCSS color variables are available for use in CSS property values.
+
+  .grid__item.three-quarters
+    .grid
+      .grid__item.one-third
+        %h2.pk-subheading Grays
+        %ul
+          %li
+            $gray-dk1:
+            %span{:class => "color", :style => "background-color:#222; color:#fff;"}#222
+          %li
+            $gray-dk2:
+            %span{:class => "color", :style => "background-color:#2f2f2f; color:#fff;"}#2f2f2f
+          %li
+            $gray-dk3:
+            %span{:class => "color", :style => "background-color:#474747; color:#fff;"}#474747
+          %li
+            $gray-dk4:
+            %span{:class => "color", :style => "background-color:#1a1919; color:#fff;"}#1a1919
+          %li
+            $gray-md1:
+            %span{:class => "color", :style => "background-color:#616161; color:#fff;"}#616161
+          %li
+            $gray-md2:
+            %span{:class => "color", :style => "background-color:#6f6f6f; color:#fff;"}#6f6f6f
+          %li
+            $gray-md3:
+            %span{:class => "color", :style => "background-color:#7c7c7c; color:#fff;"}#7c7c7c
+          %li
+            $gray-md4:
+            %span{:class => "color", :style => "background-color:#9b9b9b"}#9b9b9b
+          %li
+            $gray-lt1:
+            %span{:class => "color", :style => "background-color:#c4c4c4"}#c4c4c4
+          %li
+            $gray-lt2:
+            %span{:class => "color", :style => "background-color:#d3d3d3"}#d3d3d3
+          %li
+            $gray-lt3:
+            %span{:class => "color", :style => "background-color:#e4e4e4"}#e4e4e4
+          %li
+            $gray-lt4:
+            %span{:class => "color", :style => "background-color:#f6f6f6"}#f6f6f6
+          %li
+            $gray-lt5:
+            %span{:class => "color", :style => "background-color:#f9f9f9"}#f9f9f9
+          %li
+            $gray-lt6:
+            %span{:class => "color", :style => "background-color:#b7b7b7"}#b7b7b7
+      .grid__item.one-third
+        %h2.pk-subheading Blues
+        %ul
+          %li
+            $blue1:
+            %span{:class => "color", :style => "background-color:#3f7ed3; color:#fff;"}#3f7ed3
+          %li
+            $blue2:
+            %span{:class => "color", :style => "background-color:#1b62d7; color:#fff;"}#1b62d7
+          %li
+            $blue3:
+            %span{:class => "color", :style => "background-color:#1b55bc; color:#fff;"}#1b55bc
+        %h2.pk-subheading Reds
+        %ul
+          %li
+            $red1:
+            %span{:class => "color", :style => "background-color:#d02323; color:#fff;"}#d02323
+          %li
+            $red2:
+            %span{:class => "color", :style => "background-color:#e42b17; color:#fff;"}#e42b17
+          %li
+            $red3:
+            %span{:class => "color", :style => "background-color:#dc3a1f; color:#fff;"}#dc3a1f
+          %li
+            $red4:
+            %span{:class => "color", :style => "background-color:#f7dcd9"}#f7dcd9
+        %h2.pk-subheading Oranges
+        %ul
+          %li
+            $orange1:
+            %span{:class => "color", :style => "background-color:#eea000"}#eea000
+          %li
+            $orange2:
+            %span{:class => "color", :style => "background-color:#e88600"}#e88600
+      .grid__item.one-third
+        %h2.pk-subheading Greens
+        %ul
+          %li
+            $green1:
+            %span{:class => "color", :style => "background-color:#5e8729; color:#fff;"}#5e8729
+          %li
+            $green2:
+            %span{:class => "color", :style => "background-color:#429a41; color:#fff;"}#429a41
+          %li
+            $green3:
+            %span{:class => "color", :style => "background-color:#d3f1d6"}#d3f1d6
+          %li
+            $green4:
+            %span{:class => "color", :style => "background-color:#77a836"}#77a836
+          %li
+            $green5:
+            %span{:class => "color", :style => "background-color:#96c157"}#96c157
+          %li
+            $green6:
+            %span{:class => "color", :style => "background-color:#619c25"}#619c25
+        %h2.pk-subheading Purples
+        %ul
+          %li
+            $purple1:
+            %span{:class => "color", :style => "background-color:#a454dc; color:#fff;"}#a454dc
+          %li
+            $purple2:
+            %span{:class => "color", :style => "background-color:#722aa3; color:#fff;"}#722aa3
+        %h2.pk-subheading Yellows
+        %ul
+          %li
+            $yellow1:
+            %span{:class => "color", :style => "background-color:#f7f7d9; color:black;"}#f7f7d9
+          %li
+            $yellow2:
+            %span{:class => "color", :style => "background-color:#ffffe1; color:black;"}#ffffe1
+
+    %h2.pk-subheading Usage
+    = find_and_preserve do
+      %pre
+        :escaped
+          .element {
+            color: $red1
+          }
+
+
+%section.pk-section.grid
+
+  %header.grid__item.one-whole
+    %h2.pk-heading Grid System
+
+  .grid__item.one-quarter
+    .pk-intro
+      %p
+        The grid system used is based off of
+        = succeed "," do
+          %a{:href => "http://csswizardry.com/2013/02/introducing-csswizardry-grids/"}>< csswizardry-grids
+        which uses equally divisable columns.
+      %p
+        The containing element must have a
+        %code .grid
+        class, and each column must have a
+        %code .grid__item
+        class. To controll a column's width, use additional fully spelled out class names.
+
+  .grid__item.three-quarters
+
+    .grid.show-grid
+      .grid__item.one-half
+        .demo
+          %code .one-half
+      .grid__item.one-half
+        .demo
+          %code .one-half
+
+    .grid.show-grid
+      .grid__item.one-third
+        .demo
+          %code .one-third
+      .grid__item.two-thirds
+        .demo
+          %code .two-thirds
+
+    .grid.show-grid
+      .grid__item.one-quarter
+        .demo
+          %code .one-quarter
+      .grid__item.three-quarters
+        .demo
+          %code .three-quarters
+
+    .grid.show-grid
+      .grid__item.one-fifth
+        .demo
+          %code .one-fifth
+      .grid__item.four-fifths
+        .demo
+          %code .four-fifths
+
+    .grid.show-grid
+      .grid__item.one-sixth
+        .demo
+          %code .one-sixth
+      .grid__item.five-sixths
+        .demo
+          %code .five-sixths
+
+    .grid.show-grid
+      .grid__item.one-eighth
+        .demo
+          %code .one-eighth
+      .grid__item.seven-eighths
+        .demo
+          %code .seven-eighths
+
+    .grid.show-grid
+      .grid__item.one-tenth
+        .demo
+          %code .one-tenth
+      .grid__item.nine-tenths
+        .demo
+          %code .nine-tenths
+
+    .grid.show-grid
+      .grid__item.one-twelfth
+        .demo
+          %code .one-twelfth
+      .grid__item.eleven-twelfths
+        .demo
+          %code .eleven-twelfths
+
+%section.pk-section.grid
+
+  %header.grid__item.one-whole
+    %h2.pk-heading Typography
+
+  .grid__item.one-quarter
+    %h3.pk-subheading Headings
+    %p.pk-intro Any heading element (H1-H6) can be used with the heading classes shown to the right.
+
+  .grid__item.three-quarters
+    %h1.hdr-page-title
+      Page Tile Heading
+      %code .hdr-page-title
+      %br
+      %br
+    %h2.hdr.hdr-primary
+      Primary Heading
+      %code .hdr.hdr-primary
+    %h2.hdr.hdr-secondary
+      Secondary Heading
+      %code .hdr.hdr-secondary
+    %h2.hdr.hdr-tertiary
+      Tertiary Header
+      %code .hdr.hdr-tertiary
+    %h2.hdr.hdr-quaternary
+      Quaternary Header
+      %code .hdr.hdr-quaternary
+    %h2.hdr.hdr-quinary
+      Quinary Header
+      %code .hdr.hdr-quinary
+    %h2.hdr.hdr-single-line
+      Single Line Modifier
+      %code .hdr-single-line
+      use with headings above to keep display on a single line and truncate text if necessary with an ellipsis
+    %h2.hdr.hdr-inline
+      Inline Header
+      %code .hdr-inline
+      Will put the header into an inline state for content on the left/right
+
+
+%section.pk-section.grid
+
+  %header.grid__item.one-whole
+    %h2.pk-heading Forms
+
+  .grid__item.one-quarter
+    %h2.pk-subheading Input Containers
+    .pk-intro
+      %p Control the width of form inputs.
+
+  .grid__item.three-quarters
+    %p
+      Inputs are wrapped in a container with an
+      %code .input-container
+      class, and a width based modifier class, eg:
+      %code .input-container-1
+      \-
+      = succeed "." do
+        %code .input-container-18
+
+    .pk-example
+      %p.input-container.input-container-5
+        %label{:for => "f1"}
+          Name
+        %input.input{:id => "f1", :type => "text", :placeholder => ".input-container-5"}
+      %p.input-container.input-container-10
+        %label{:for => "f2"}
+          Address
+        %input.input{:id => "f2", :type => "text", :placeholder => ".input-container-10"}
+    = find_and_preserve do
+      %pre
+        :escaped
+          <p class="input-container input-container-5">
+            <label for="f1">Name</label>
+            <input class="input" id="f1" placeholder=".input-container-5" type="text">
+          </p>
+          <p class="input-container input-container-10">
+            <label for="f2">Address</label>
+            <input class="input" id="f2" placeholder=".input-container-10" type="text">
+          </p>
+
+  .grid__item.one-quarter
+    %h2.pk-subheading Input Groups
+    .pk-intro
+      %p
+        For placing inputs next to each other on the same line.
+
+  .grid__item.three-quarters
+    %p
+      Wrap the desired
+      %code .input-container
+      elements with an
+      %code .input-group
+      containing element.
+    .pk-example
+      .input-group
+        %p.input-container.input-container-6
+          %label{:for => "fname"}
+            First Name
+          %input.input{:id => "fname", :type => "text"}
+        %p.input-container.input-container-6
+          %label{:for => "lname"}
+            Last Name
+          %input.input{:id => "lname", :type => "text"}
+    = find_and_preserve do
+      %pre
+        :escaped
+          <div class="input-group">
+            <p class="input-container input-container-6">
+              <label for="fname">
+                First Name
+              </label>
+              <input class="input" id="fname" type="text">
+            </p>
+            <p class="input-container input-container-6">
+              <label for="lname">
+                Last Name
+              </label>
+              <input class="input" id="lname" type="text">
+            </p>
+          </div>
+
+  .grid__item.one-quarter
+    %h2.pk-subheading Popover Labels
+    .pk-intro
+      %p
+        Input labels can be used as field and popover labels.
+
+  .grid__item.three-quarters
+    %p
+      Wrap the
+      %code #{"<input>"}
+      and its associated
+      %code #{"<label>"}
+      with a
+      %code #{"<span>"}
+      element with an
+      %code .infield-label
+      class.
+    .pk-example
+      %p.input-container.input-container-6
+        %span{:class => "infield-label"}
+          %label{:for => "infield-example"}
+            Label
+          %input.input{:id => "infield-example", :type => "text"}
+    = find_and_preserve do
+      %pre
+        :escaped
+          <p class='input-container input-container-6'>
+            <span class='infield-label'>
+              <label for='infield-example'>
+                Label
+              </label>
+              <input class='input' id='infield-example' type='text'>
+            </span>
+          </p>
+
+  .grid__item.one-quarter
+    %h2.pk-subheading Styled Selects
+    .pk-intro
+      %p
+        Selects can be styled to match other form elements.
+
+  .grid__item.three-quarters
+    %p
+      Wrap the
+      %code #{"<select>"}
+      element in a
+      %code #{"<span>"}
+      with a class of
+      = succeed "." do
+        %code .select-wrapper
+
+    .pk-example
+      %p.input-container.input-container-6
+        %span.select-wrapper
+          %select
+            %option{:value => ""} Select One
+            %option{:value => "One"} One
+            %option{:value => "Two"} Two
+            %option{:value => "Three"} Three
+            %option{:value => "Four"} Four
+    = find_and_preserve do
+      %pre
+        :escaped
+          <p class='input-container input-container-6'>
+            <span class='select-wrapper'>
+              <select>
+                <option value=''>Select One</option>
+                <option value='One'>One</option>
+                <option value='Two'>Two</option>
+                <option value='Three'>Three</option>
+                <option value='Four'>Four</option>
+              </select>
+            </span>
+          </p>
+
+%section.pk-section.grid
+
+  %header.grid__item.one-whole
+    %h2.pk-heading Buttons
+
+  .grid__item.one-quarter
+    .pk-intro
+      %p Buttons can use different elements and can be styled by combining size and color classes.
+
+  .grid__item.three-quarters
+    %h2.pk-subheading Elements
+    %p
+      Buttons can use
+      = succeed "," do
+        %code #{"<button>"}
+      %code #{"<input>"}
+      and
+      %code #{"<a>"}
+      elements, and must have a base class of
+      = succeed "." do
+        %code .btn
+    .pk-example
+      %button.btn{:type => "button"} Button Element
+      %input.btn{:type => "submit", :value => "Input Element"}
+      %a.btn{:href => "#"} Anchor Element
+    = find_and_preserve do
+      %pre
+        :escaped
+          <button class="btn" type="button">Button Element</button>
+          <input class="btn" type="submit" value="Input Element">
+          <a class="btn" href="#">Anchor Element</a>
+
+    %h2.pk-subheading Sizes
+    %p
+      Button size can be set using additional modifier classes.
+    .pk-example
+      %button.btn.btn-xlarge{:type => "button"} XLarge
+      %button.btn.btn-large{:type => "button"} Large
+      %button.btn.btn-medium{:type => "button"} Medium
+      %button.btn.btn-small{:type => "button"} Small
+      %button.btn.btn-xsmall{:type => "button"} XSmall
+    = find_and_preserve do
+      %pre
+        :escaped
+          <button class="btn btn-xlarge" type="button">XLarge</button>
+          <button class="btn btn-large" type="button">Large</button>
+          <button class="btn btn-medium" type="button">Medium</button>
+          <button class="btn btn-small" type="button">Small</button>
+          <button class="btn btn-xsmall" type="button">XSmall</button>
+
+    %h2.pk-subheading Colors
+    %p
+      Button colors can also be set using additional modifier classes.
+    .pk-example
+      %button.btn.btn-primary{:type => "button"} Primary
+      %button.btn.btn-secondary{:type => "button"} Secondary
+      %button.btn.btn-tertiary{:type => "button"} Tertiary
+      %button.btn.btn-quaternary{:type => "button"} Quaternary
+      %button.btn.btn-quinary{:type => "button"} Quinary
+      %button.btn.btn-transparent{:type => "button"} Transparent
+    = find_and_preserve do
+      %pre
+        :escaped
+          <button class="btn btn-primary" type="button">Primary</button>
+          <button class="btn btn-secondary" type="button">Secondary</button>
+          <button class="btn btn-tertiary" type="button">Tertiary</button>
+          <button class="btn btn-quaternary" type="button">Quaternary</button>
+          <button class="btn btn-transparent" type="button">Transparent</button>
+
+%section.pk-section.grid
+
+  %header.grid__item.one-whole
+    %h2.pk-heading Tooltips & Popups
+
+  .grid__item.one-quarter
+    %h2.pk-subheading Tooltips
+    .pk-intro
+      %p
+        Add tooltips easily
+
+  .grid__item.three-quarters
+    %p
+      Put a
+      %code #{"<label>"}
+      into any element with a
+      %code .tooltip
+      class.
+    .pk-example
+      %p
+        To see the tooltip,
+        %span#tooltip-example{:class => "tooltip", :style => "text-decoration:underline"}
+          hover here
+          %label{:for => "tooltip-example"}
+            You can even
+            %span{:style => "background-color: #5e8729"}
+              use HTML
+
+    = find_and_preserve do
+      %pre
+        :escaped
+          <p>
+            To see the tooltip,
+            <span id='tooltip-example' class='tooltip' style='text-decoration:underline'>
+              hover here
+              <label for='tooltip-example'>
+                You can even <span style="background-color: #5e8729'>use HTML</span>
+              </label>
+            </span>
+          </p>
+
+  .grid__item.one-quarter
+    %h2.pk-subheading Popups
+    .pk-intro
+      %p
+        Add popups for showing additional content or dropdown menues.
+
+  .grid__item.three-quarters
+    %p
+      Place the popup content inside a
+      %code .popup-trigger
+      element, wrapped in
+      %code .popup
+      ,
+      %code .popup-outer
+      and
+      %code .popup-inner
+      elements.
+      %br
+      Call
+      %code $('#trigger').Popup()
+      to initialize the component.
+
+    .pk-example
+      %p
+        #popup-example-trigger.popup-trigger
+          %a.btn.btn-small Hover or touch here
+          .popup
+            .popup-outer
+              .popup-inner
+                %h4.hdr Notes on styling
+                %p
+                  %code width
+                  on the
+                  %code .popup
+                  class needs to be set to a fixed value, but you may override the default value to fit your needs.
+                  Make sure to adjust
+                  %code margin-left
+                  as well to position the popup relative to the trigger element.
+                %h4.hdr Configuration Options
+                %ul
+                  %li
+                    %code afterOpen
+                    may be set to a callback function invoked, well, after the popup was opened. Handy for loading content async.
+                  %li
+                    %code afterClose
+                    may be set to a callback function invoked after the popup closed.
+                  %li
+                    %code focusClass
+                    (default "popup-open") is the class assigned to the trigger element when opening the popup.
+                  %li
+                    %code hoverIntent
+                    (default 150) is the delay before opening the popup on mouse hover.
+        to open the popup and get more information.
+
+        - content_for :footer_js do
+          :javascript
+            $(function() { $('#popup-example-trigger').Popup(); });
+
+    = find_and_preserve do
+      %pre
+        :escaped
+          <div class="popup-trigger" id="popup-example-trigger">
+            <a class="btn btn-small">Trigger text, <button>, <a> or whatever</a>
+            <div class="popup">
+              <div class="popup-outer">
+                <div class="popup-inner">
+                  <h4 class="hdr">Header</h4>
+                  <p>
+                    Arbitrary HTML Content.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+%section.pk-section.grid
+
+  %header.grid__item.one-whole
+    %h2.pk-heading Icons
+
+  .grid__item.one-quarter
+    .pk-intro
+      %p
+        A custom set of vector based icons are available.
+
+  .grid__item.three-quarters
+    %p
+      All icons use a
+      %code #{"<span>"}
+      tag with a base class of
+      %code .icon
+      in addition to one of the icon classes listed below.
+    = find_and_preserve do
+      %pre
+        = preserve
+        #{'<span class="icon icon-circle-add"></span>'}
+
+    %ul.pk-icon-grid
+      %li
+        %span.icon.icon-user
+        %code .icon-user
+      %li
+        %span.icon.icon-bolt
+        %code .icon-bolt
+      %li
+        %span.icon.icon-cart
+        %code .icon-cart
+      %li
+        %span.icon.icon-ok
+        %code .icon-ok
+      %li
+        %span.icon.icon-close
+        %code .icon-close
+      %li
+        %span.icon.icon-email
+        %code .icon-email
+      %li
+        %span.icon.icon-favorite
+        %code .icon-favorite
+      %li
+        %span.icon.icon-circle-add
+        %code .icon-circle-add
+      %li
+        %span.icon.icon-search
+        %code .icon-search
+      %li
+        %span.icon.icon-tag
+        %code .icon-tag
+      %li
+        %span.icon.icon-warning
+        %code .icon-warning
+      %li
+        %span.icon.icon-arrow-down
+        %code .icon-arrow-down
+      %li
+        %span.icon.icon-bubble
+        %code .icon-bubble
+      %li
+        %span.icon.icon-phone
+        %code .icon-phone
+      %li
+        %span.icon.icon-chevron-right
+        %code .icon-chevron-right
+      %li
+        %span.icon.icon-chevron-left
+        %code .icon-chevron-left
+      %li
+        %span.icon.icon-chevron-up
+        %code .icon-chevron-up
+      %li
+        %span.icon.icon-chevron-down
+        %code .icon-chevron-down
+      %li
+        %span.icon.icon-chevron2-right
+        %code .icon-chevron2-right
+      %li
+        %span.icon.icon-chevron2-left
+        %code .icon-chevron2-left
+      %li
+        %span.icon.icon-chevron2-up
+        %code .icon-chevron2-up
+      %li
+        %span.icon.icon-chevron2-down
+        %code .icon-chevron2-down
+      %li
+        %span.icon.icon-twitter
+        %code .icon-twitter
+      %li
+        %span.icon.icon-facebook
+        %code .icon-facebook
+      %li
+        %span.icon.icon-list
+        %code .icon-list
+      %li
+        %span.icon.icon-reviews
+        %code .icon-reviews
+      %li
+        %span.icon.icon-circle-delete
+        %code .icon-circle-delete
+      %li
+        %span.icon.icon-computers
+        %code .icon-computers
+      %li
+        %span.icon.icon-cameras
+        %code .icon-cameras
+      %li
+        %span.icon.icon-electronics
+        %code .icon-electronics
+      %li
+        %span.icon.icon-home
+        %code .icon-home
+      %li
+        %span.icon.icon-baby
+        %code .icon-baby
+      %li
+        %span.icon.icon-fashion
+        %code .icon-fashion
+      %li
+        %span.icon.icon-featured
+        %code .icon-featured
+      %li
+        %span.icon.icon-heart
+        %code .icon-heart
+      %li
+        %span.icon.icon-generic
+        %code .icon-generic
+      %li
+        %span.icon.icon-new
+        %code .icon-new
+      %li
+        %span.icon.icon-crown
+        %code .icon-crown
+      %li
+        %span.icon.icon-star
+        %code .icon-star
+      %li
+        %span.icon.icon-savings
+        %code .icon-savings
+      %li
+        %span.icon.icon-trash
+        %code .icon-trash
+
+%section.pk-section.grid
+
+  %header.grid__item.one-whole
+    %h2.pk-heading Utility Classes
+
+  .grid__item.one-quarter
+    .pk-intro
+      %p Several miscellaneous utility classes are available for general use.
+
+  .grid__item.three-quarters
+    %p
+      %code .align-center
+      Override class which aligns text to the center.
+    %p
+      %code .align-left
+      Override class which aligns text to the left.
+    %p
+      %code .align-right
+      Override class which aligns text to the right.
+    %p
+      %code .divider
+      Use the class on an
+      %code hr
+      element to product a subtle divider on the page (example below).
+    %hr.divider
+
+
+- content_for(:footer_js) do
+  :javascript
+    $('.carousel-primary').Carousel({
+      itmClass: 'tile-itm',
+      cssPrefix: 'hm-',
+      navNextHTML: '<span class="icon icon-chevron2-right"></span>',
+      navPrevHTML: '<span class="icon icon-chevron2-left"></span>'
+    });
